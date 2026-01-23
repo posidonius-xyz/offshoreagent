@@ -1,4 +1,7 @@
 services:
+  # ==========================================================================
+  # Web Dashboard Service
+  # ==========================================================================
   web:
     build:
       context: .
@@ -17,6 +20,15 @@ services:
       retries: 3
       start_period: 40s
 
+  # ==========================================================================
+  # Data Download Service (CLI tool)
+  # Usage:
+  #   docker compose run --rm data-download list
+  #   docker compose run --rm data-download list --json
+  #   docker compose run --rm data-download download --id 123
+  #   docker compose run --rm data-download download --all
+  #   docker compose run --rm data-download search "keyword"
+  # ==========================================================================
   data-download:
     build:
       context: .
@@ -25,7 +37,44 @@ services:
       - ./data:/app/data
     environment:
       - PYTHONUNBUFFERED=1
-    stdin_open: true
-    tty: true
+      - DATA_OUTPUT_DIR=/app/data
+    profiles:
+      - tools
+
+  # ==========================================================================
+  # GDB Inventory Service (analyze geodatabase layers)
+  # Usage:
+  #   docker compose run --rm gdb-inventory
+  #   docker compose run --rm gdb-inventory ./data-extracted/custom.gdb
+  # ==========================================================================
+  gdb-inventory:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data-extracted:/app/data-extracted:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    entrypoint: ["python", "gdb_inventory.py"]
+    profiles:
+      - tools
+
+  # ==========================================================================
+  # Generic Python Runner (for arbitrary scripts)
+  # Usage:
+  #   docker compose run --rm python-runner script.py --args
+  # ==========================================================================
+  python-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/app/data
+      - ./data-extracted:/app/data-extracted
+      - .:/app/src:ro
+    working_dir: /app/src
+    environment:
+      - PYTHONUNBUFFERED=1
+    entrypoint: ["python"]
     profiles:
       - tools

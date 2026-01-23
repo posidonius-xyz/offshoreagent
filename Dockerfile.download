@@ -25,5 +25,8 @@ RUN pip install --no-cache-dir requests
 # Create data directory
 RUN mkdir -p /app/data
 
-# Run the download script
-CMD ["python", "data_download.py"]
+# Use ENTRYPOINT so arguments are passed to the script
+ENTRYPOINT ["python", "data_download.py"]
+
+# Default command (show help)
+CMD ["--help"]

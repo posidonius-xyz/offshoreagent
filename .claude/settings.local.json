@@ -5,7 +5,8 @@
       "Bash(azcopy copy:*)",
       "Bash(py -3:*)",
       "Bash(netstat:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(docker compose run:*)"
     ]
   }
 }
