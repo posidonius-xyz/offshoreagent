@@ -1,13 +1,38 @@
 services:
   # ==========================================================================
-  # Web Dashboard Service
+  # Nederwiek I (NWI) Dashboard Service
+  # Usage: docker compose up nwi-dashboard
+  # Access: http://localhost:8000
   # ==========================================================================
-  web:
+  nwi-dashboard:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    volumes:
+      - ./data-extracted:/app/data-extracted:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ==========================================================================
+  # TNW Dashboard Service
+  # Usage: docker compose up tnw-dashboard
+  # Access: http://localhost:8001
+  # ==========================================================================
+  tnw-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.tnw
+    ports:
+      - "8001:8000"
     volumes:
       - ./data-extracted:/app/data-extracted:ro
     environment:

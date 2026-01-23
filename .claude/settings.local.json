@@ -6,7 +6,9 @@
       "Bash(py -3:*)",
       "Bash(netstat:*)",
       "Bash(findstr:*)",
-      "Bash(docker compose run:*)"
+      "Bash(docker compose run:*)",
+      "Bash(docker compose build:*)",
+      "Bash(docker compose:*)"
     ]
   }
 }

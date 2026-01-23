@@ -10,6 +10,15 @@ This is a **GIS Data Processing and Visualization System** template for building
 
 This project includes an example implementation for Dutch offshore wind farm infrastructure (Nederwiek I), demonstrating the full workflow with geological ground models, infrastructure assets, and survey data from the Pleio DataHub API.
 
+## User Preferences
+
+**Dashboard Creation:** When creating new dashboards for different locations/datasets:
+- **Create a new directory** for each dashboard (e.g., `tnw_dashboard/`, `nwz_dashboard/`)
+- **Use the existing `infrastructure_dashboard/` as a template** - copy and modify
+- **Add a new Docker service** in `docker-compose.yml` with a unique port
+- **Create a dedicated Dockerfile** (e.g., `Dockerfile.tnw`) for each dashboard
+- **Never modify the original `infrastructure_dashboard/`** - keep it as reference
+
 ## Agent Execution Guidelines
 
 **IMPORTANT:** Always prefer Docker Compose commands over direct Python execution. This ensures:
@@ -21,9 +30,9 @@ This project includes an example implementation for Dutch offshore wind farm inf
 ### Preferred Commands (Docker Compose)
 
 ```bash
-# Run the dashboard
-docker compose up web
-# Access at http://localhost:8000
+# Run dashboards
+docker compose up nwi-dashboard    # Nederwiek I at http://localhost:8000
+docker compose up tnw-dashboard    # TNW at http://localhost:8001
 
 # List available datasets (JSON output for parsing)
 docker compose run --rm data-download --json list
@@ -64,12 +73,13 @@ python gdb_inventory.py
 
 ## Docker Services Reference
 
-| Service | Purpose | Usage |
-|---------|---------|-------|
-| `web` | Dashboard server | `docker compose up web` |
-| `data-download` | Download datasets from API | `docker compose run --rm data-download <command>` |
-| `gdb-inventory` | Analyze geodatabase layers | `docker compose run --rm gdb-inventory` |
-| `python-runner` | Run arbitrary scripts | `docker compose run --rm python-runner script.py` |
+| Service | Purpose | Port | Usage |
+|---------|---------|------|-------|
+| `nwi-dashboard` | Nederwiek I dashboard | 8000 | `docker compose up nwi-dashboard` |
+| `tnw-dashboard` | TNW dashboard | 8001 | `docker compose up tnw-dashboard` |
+| `data-download` | Download datasets from API | - | `docker compose run --rm data-download <command>` |
+| `gdb-inventory` | Analyze geodatabase layers | - | `docker compose run --rm gdb-inventory` |
+| `python-runner` | Run arbitrary scripts | - | `docker compose run --rm python-runner script.py` |
 
 ### Data Download Commands
 
@@ -101,7 +111,7 @@ docker compose run --rm data-download --api-base https://other-api.com/v1 list
 
 ```
 project/
-├── infrastructure_dashboard/     # Flask application package
+├── infrastructure_dashboard/     # NWI Flask application (reference template)
 │   ├── __init__.py              # App factory
 │   ├── app.py                   # Main entry
 │   ├── config.py                # Layer configs, map defaults, data paths
@@ -109,11 +119,21 @@ project/
 │   ├── map_builder.py           # Folium map creation & layer styling
 │   ├── routes.py                # Flask route handlers
 │   └── templates/dashboard.html # Dashboard template
+├── tnw_dashboard/               # TNW Flask application (example new dashboard)
+│   ├── __init__.py
+│   ├── app.py
+│   ├── config.py
+│   ├── data_loader.py
+│   ├── map_builder.py
+│   ├── routes.py
+│   └── templates/dashboard.html
 ├── data_download.py             # CLI for downloading datasets from API
 ├── gdb_inventory.py             # Inventories geodatabase layers
-├── infrastructure_dashboard.py  # Dashboard entry point
+├── infrastructure_dashboard.py  # NWI dashboard entry point
+├── tnw_dashboard.py             # TNW dashboard entry point
 ├── docker-compose.yml           # Container orchestration
-├── Dockerfile                   # Web service image (with GIS libs)
+├── Dockerfile                   # NWI service image (with GIS libs)
+├── Dockerfile.tnw               # TNW service image
 ├── Dockerfile.download          # Download service image (with azcopy)
 ├── data-extracted/              # Extracted geodatabase files
 └── data/                        # Downloaded raw archives (git-ignored)
@@ -138,51 +158,91 @@ project/
 
 1. **Run inventory script**:
    ```bash
-   docker compose run --rm gdb-inventory
+   docker compose run --rm gdb-inventory ./data-extracted/your_data.gdb
    ```
 2. **Document layer types** - Points, lines, polygons, rasters
 3. **Identify key fields** - Attributes useful for popups and filtering
 4. **Note coordinate system** - Required for CRS transformation
 
-### Phase 3: Configuration
+### Phase 3: Create Dashboard Directory
 
-Update `config.py` with:
+**IMPORTANT:** Create a new directory for each dashboard, using `infrastructure_dashboard/` as template:
+
+```bash
+# Create new dashboard directory structure
+mkdir -p new_dashboard/templates
+
+# Copy template files
+cp infrastructure_dashboard/*.py new_dashboard/
+cp infrastructure_dashboard/templates/dashboard.html new_dashboard/templates/
+```
+
+### Phase 4: Configuration
+
+Update `new_dashboard/config.py` with:
 
 ```python
 # Data source path
 GDB_PATH = "./data-extracted/your_data.gdb"
 
 # Map center and zoom for your region
-MAP_CENTER = [latitude, longitude]
-MAP_ZOOM = 10
+DEFAULT_CENTER_LAT = latitude
+DEFAULT_CENTER_LON = longitude
+DEFAULT_ZOOM = 10
 
 # Layer definitions
-LAYERS = {
-    "layer_name": {
-        "source": "Layer_Name_In_GDB",
-        "style": {"color": "#hex", "weight": 2, "fillOpacity": 0.5},
-        "popup_fields": ["field1", "field2"],
-        "visible": True
+LAYER_CONFIGS = {
+    "layer_key": {
+        "name": "Display Name",
+        "gdb_layer": "Layer_Name_In_GDB",
+        "show": True,  # Default visibility
     }
 }
 ```
 
-### Phase 4: Data Loading
+### Phase 5: Customize Map Builder
 
-Modify `data_loader.py` to handle your data:
+Modify `new_dashboard/map_builder.py`:
 
-1. **Set source CRS** - Update EPSG code for your data's coordinate system
-2. **Handle special cases** - Raster layers, multi-geometry, null handling
-3. **Add computed fields** - Derive values if needed for display
+1. **Add layer functions** - One function per layer type with styling
+2. **Update `create_map()`** - Call your layer functions
+3. **Set popup fields** - Configure what shows on click
 
-### Phase 5: Map Building & Deployment
+### Phase 6: Docker Setup
 
-1. Customize `map_builder.py` for visualization
-2. Test locally:
-   ```bash
-   docker compose up web
+1. **Create Dockerfile** (e.g., `Dockerfile.new`):
+   ```dockerfile
+   # Copy from Dockerfile, update COPY paths for new_dashboard/
+   COPY new_dashboard/ ./new_dashboard/
+   COPY new_dashboard.py .
+   CMD ["gunicorn", "...", "new_dashboard:app"]
    ```
-3. Access dashboard at http://localhost:8000
+
+2. **Add service to docker-compose.yml**:
+   ```yaml
+   new-dashboard:
+     build:
+       context: .
+       dockerfile: Dockerfile.new
+     ports:
+       - "8002:8000"  # Use unique port
+     volumes:
+       - ./data-extracted:/app/data-extracted:ro
+   ```
+
+3. **Create entry point** (`new_dashboard.py`):
+   ```python
+   from new_dashboard import create_app
+   app = create_app()
+   ```
+
+### Phase 7: Test & Deploy
+
+```bash
+docker compose build new-dashboard
+docker compose up new-dashboard
+# Access at http://localhost:8002
+```
 
 ## Key Technical Details
 

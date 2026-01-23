@@ -6,11 +6,17 @@ Explores ESRI File Geodatabase and creates a data inventory
 import fiona
 from pathlib import Path
 import json
+import sys
 
-gdb_path = "./data-extracted/RVO_NW_I_GGM.gdb"
+# Accept GDB path as command line argument, or use default
+if len(sys.argv) > 1:
+    gdb_path = sys.argv[1]
+else:
+    gdb_path = "./data-extracted/RVO_NW_I_GGM.gdb"
 
+gdb_name = Path(gdb_path).stem
 print("=" * 70)
-print("GIS DATA INVENTORY - Nederwiek I Geological Ground Model")
+print(f"GIS DATA INVENTORY - {gdb_name}")
 print("=" * 70)
 print(f"\nGeodatabase: {gdb_path}\n")
 
