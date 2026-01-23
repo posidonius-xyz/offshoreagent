@@ -1,0 +1,29 @@
+FROM python:3.11-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install azcopy
+RUN curl -L https://aka.ms/downloadazcopy-v10-linux -o /tmp/azcopy.tar.gz \
+    && tar -xzf /tmp/azcopy.tar.gz -C /tmp \
+    && mv /tmp/azcopy_linux_*/azcopy /usr/local/bin/ \
+    && chmod +x /usr/local/bin/azcopy \
+    && rm -rf /tmp/azcopy* \
+    && azcopy --version
+
+WORKDIR /app
+
+# Copy download script
+COPY data_download.py .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir requests
+
+# Create data directory
+RUN mkdir -p /app/data
+
+# Run the download script
+CMD ["python", "data_download.py"]

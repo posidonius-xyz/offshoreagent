@@ -1,0 +1,35 @@
+FROM python:3.11-slim
+
+# Install system dependencies for GDAL/Fiona/GeoPandas
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gdal-bin \
+    libgdal-dev \
+    libgeos-dev \
+    libproj-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set GDAL environment variables
+ENV GDAL_CONFIG=/usr/bin/gdal-config
+
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY infrastructure_dashboard/ ./infrastructure_dashboard/
+COPY infrastructure_dashboard.py .
+
+# Create non-root user for security
+RUN useradd --create-home appuser && chown -R appuser:appuser /app
+USER appuser
+
+# Expose port
+EXPOSE 8000
+
+# Run with gunicorn (sync workers for large responses)
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "4", "--worker-class", "sync", "--timeout", "120", "--preload", "infrastructure_dashboard:app"]

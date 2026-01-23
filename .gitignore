@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Data directories - keep folders, ignore contents
+data/*
+!data/.gitkeep
+data-extracted/*
+!data-extracted/.gitkeep
+
+# Downloaded archives
+*.zip
+*.7z
+*.tar.gz
+*.tar
+
+# Geodatabase lock files
+*.lock
+
+# Flask
+instance/
+.webassets-cache
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Output files
+*.html
+!templates/*.html

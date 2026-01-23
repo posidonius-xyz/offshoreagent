@@ -1,0 +1,1704 @@
+{
+  "geodatabase": "./data-extracted/RVO_NW_I_GGM.gdb",
+  "total_layers": 79,
+  "vector_layers_count": 79,
+  "raster_layers_count": 0,
+  "total_features": 176099,
+  "vector_layers": [
+    {
+      "name": "Borehole_locations",
+      "geometry_type": "Point",
+      "crs": "EPSG:25831",
+      "feature_count": 68,
+      "fields": [
+        "UWI",
+        "Borehole_I",
+        "Well_Symbo",
+        "GL_Elevati",
+        "KB_Elevati",
+        "Active_Ele",
+        "Total_Dept",
+        "Water_Dept",
+        "Surface_Lo",
+        "Surface__1",
+        "Latitude",
+        "Longitude"
+      ],
+      "bounds": [
+        506732.0,
+        5864740.9998,
+        519538.0,
+        5898755.9998
+      ]
+    },
+    {
+      "name": "Buried_channels",
+      "geometry_type": "MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "InPoly_FID",
+        "BUFF_DIST",
+        "ORIG_FID",
+        "Shape_Leng",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        506310.5535000004,
+        5868979.7106,
+        520178.9556,
+        5899896.734300001
+      ]
+    },
+    {
+      "name": "Cables",
+      "geometry_type": "3D MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 47,
+      "fields": [
+        "CODE",
+        "OWNER",
+        "TYPE",
+        "NOTES",
+        "YEAR_INSTALLED",
+        "YEAR_DECOMMISSIONED",
+        "FROM_LOCATION",
+        "TO_LOCATION",
+        "UPDATE_DATE",
+        "DATA_SOURCE",
+        "Updated_By",
+        "STATUS",
+        "NAME",
+        "Layer",
+        "SHAPE_Length"
+      ],
+      "bounds": [
+        76825.33999999985,
+        5526669.4278,
+        850623.0263,
+        6631390.365900001
+      ]
+    },
+    {
+      "name": "Downhole_Geophysical_Measurements__BGL_",
+      "geometry_type": "Point",
+      "crs": "EPSG:25831",
+      "feature_count": 5,
+      "fields": [
+        "Location_ID",
+        "Location_Type",
+        "Status",
+        "Final_Depth",
+        "Ground_Level",
+        "Easting",
+        "Northing",
+        "Latitude_Decimal",
+        "Longitude_Decimal",
+        "Latitude",
+        "Longitude",
+        "National_Grid_Referencing_System",
+        "Date_Start",
+        "Date_End",
+        "Remarks",
+        "Location_Purpose",
+        "Termination_Reason",
+        "Well_Cap",
+        "Grid_Letter_Reference",
+        "Local_X_Grid",
+        "Local_Y_Grid",
+        "Local_Level",
+        "Local_Datum",
+        "Local_Grid_System",
+        "Projection_Format",
+        "Locationing_Method",
+        "Sub_Location",
+        "Phase",
+        "Alignment_ID",
+        "Offset",
+        "Chainage",
+        "Transformation",
+        "Checked_by",
+        "Checked_Date",
+        "Approved_by",
+        "National_Datum_Referencing_System",
+        "Original_Location_ID",
+        "Original_Job_ID",
+        "Original_Company",
+        "Original_Id",
+        "Northing_Traverse_End",
+        "Longitude_End",
+        "Local_Y_End",
+        "Local_X_End",
+        "Local_Level_End",
+        "Latitude_End",
+        "Ground_Level_End",
+        "Easting_Traverse_End"
+      ],
+      "bounds": [
+        511226.9900000002,
+        5869844.15,
+        519304.91000000015,
+        5890658.57
+      ]
+    },
+    {
+      "name": "E3_MTDs_Above_60mBSF",
+      "geometry_type": "3D MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "Name",
+        "InPoly_FID",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        506620.2019999996,
+        5891183.8773,
+        509331.7575000003,
+        5893942.323000001
+      ]
+    },
+    {
+      "name": "E3_MTDs_Below_60mBSF",
+      "geometry_type": "3D MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "Name",
+        "InPoly_FID",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        506321.6643000003,
+        5891183.814099999,
+        510448.1118999999,
+        5898300.1164
+      ]
+    },
+    {
+      "name": "E_1_Unit_Channels",
+      "geometry_type": "3D MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 12,
+      "fields": [
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        505005.0,
+        5888030.0,
+        516805.0,
+        5901330.0
+      ]
+    },
+    {
+      "name": "E_4_Potential_Glaciotectonised_Sediments",
+      "geometry_type": "3D MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        505015.0,
+        5885983.078600001,
+        516265.0,
+        5901330.0
+      ]
+    },
+    {
+      "name": "E_5_Potential_Glaciotectonised_Sediments",
+      "geometry_type": "3D MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 2,
+      "fields": [
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        505015.0,
+        5866770.0,
+        516265.0,
+        5901330.0
+      ]
+    },
+    {
+      "name": "Faults",
+      "geometry_type": "3D MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 10,
+      "fields": [
+        "LAST_UPDAT",
+        "LAST_UPD_1",
+        "FEATURE_ID",
+        "SURVEY_ID",
+        "SURVEY_ID_",
+        "REMARKS",
+        "LAYER",
+        "FEATURE_NA",
+        "FEATURE_DE",
+        "DATA_SOURC",
+        "INTERPRETA",
+        "REFLECTOR_",
+        "GEOLOGIC_U",
+        "HORIZON",
+        "SYMBOLOGY_",
+        "STRATIGRAP",
+        "FAULT_NAME",
+        "FAULT_SEQ",
+        "LINE_NAME",
+        "FAULT_DESC",
+        "DEPTH",
+        "Shape_Leng",
+        "Shape_Length"
+      ],
+      "bounds": [
+        508278.74590000045,
+        5879559.095000001,
+        519127.9977000002,
+        5896301.4135
+      ]
+    },
+    {
+      "name": "Geophysical_Survey_Magnetometer_Contacts",
+      "geometry_type": "3D Point",
+      "crs": "EPSG:25831",
+      "feature_count": 6194,
+      "fields": [
+        "LAST_UPDATE",
+        "LAST_UPDATE_BY",
+        "FEATURE_ID",
+        "SURVEY_ID",
+        "SURVEY_ID_REF",
+        "REMARKS",
+        "LAYER",
+        "FEATURE_NAME",
+        "FEATURE_DESC",
+        "DATA_SOURCE",
+        "INTERPRETATION_SOURCE",
+        "SURVEY_DATE",
+        "HEIGHT",
+        "HEIGHT_DESCRIPTION",
+        "DEPTH",
+        "DIMENSION_DESCRIPTION",
+        "SYMBOLOGY_CODE",
+        "SEABED_GRADIENT",
+        "BEARING",
+        "LENGTH",
+        "PICTURE_URL",
+        "WAVE_LENGTH",
+        "WAVE_HEIGHT",
+        "WIDTH",
+        "IMPRESSION_DEPTH",
+        "EASTING",
+        "NORTHING",
+        "FISH_ALT",
+        "FEATURE_NAME_SSS",
+        "PEAK_TO_PEAK_NT",
+        "ANALYTIC_SIG_NT",
+        "ALTITUDE"
+      ],
+      "bounds": [
+        505141.80000000005,
+        5861915.950000001,
+        519840.2800000001,
+        5901222.44
+      ]
+    },
+    {
+      "name": "Geophysical_Survey_Priority_Seismic_Lines",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 120,
+      "fields": [
+        "Survey_Lin",
+        "Shape_Length"
+      ],
+      "bounds": [
+        504869.4400000004,
+        5862284.640000001,
+        520322.3499999996,
+        5901387.640000001
+      ]
+    },
+    {
+      "name": "Geophysical_Survey_SSS_Contacts",
+      "geometry_type": "3D Point",
+      "crs": "EPSG:25831",
+      "feature_count": 623,
+      "fields": [
+        "LAST_UPDATE",
+        "LAST_UPDATE_BY",
+        "FEATURE_ID",
+        "SURVEY_ID",
+        "SURVEY_ID_REF",
+        "REMARKS",
+        "LAYER",
+        "FEATURE_NAME",
+        "FEATURE_DESC",
+        "DATA_SOURCE",
+        "INTERPRETATION_SOURCE",
+        "SURVEY_DATE",
+        "HEIGHT",
+        "HEIGHT_DESCRIPTION",
+        "DEPTH",
+        "DIMENSION_DESCRIPTION",
+        "SYMBOLOGY_CODE",
+        "SEABED_GRADIENT",
+        "BEARING",
+        "LENGTH",
+        "PICTURE_URL",
+        "WAVE_LENGTH",
+        "WAVE_HEIGHT",
+        "WIDTH",
+        "Feature_Name_MAG",
+        "Easting",
+        "Northing"
+      ],
+      "bounds": [
+        505301.9323334991,
+        5862075.757576083,
+        519745.09008628305,
+        5901136.242234442
+      ]
+    },
+    {
+      "name": "Geophysical_Survey_Sediment_Primary",
+      "geometry_type": "MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 223,
+      "fields": [
+        "LAST_UPDATE",
+        "LAST_UPDATE_BY",
+        "FEATURE_ID",
+        "SURVEY_ID",
+        "SURVEY_ID_REF",
+        "REMARKS",
+        "LAYER",
+        "FEATURE_NAME",
+        "FEATURE_DESC",
+        "DATA_SOURCE",
+        "INTERPRETATION_SOURCE",
+        "SURVEY_DATE",
+        "HEIGHT",
+        "HEIGHT_DESCRIPTION",
+        "DEPTH",
+        "DIMENSION_DESCRIPTION",
+        "SYMBOLOGY_CODE",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        505112.29335576703,
+        5861775.6495,
+        520170.89600000007,
+        5901232.453700002
+      ]
+    },
+    {
+      "name": "IJV_tielines",
+      "geometry_type": "3D MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 4,
+      "fields": [
+        "Label",
+        "LabelOnEnd",
+        "Name",
+        "First_SP",
+        "Last_SP",
+        "NumberofTr",
+        "Shape_Length"
+      ],
+      "bounds": [
+        512731.14070000034,
+        5869290.5977,
+        558008.9206999997,
+        5885207.217700001
+      ]
+    },
+    {
+      "name": "Infrastructure_As_found_Infrastructure_Arc",
+      "geometry_type": "3D MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 106,
+      "fields": [
+        "LAST_UPDATE",
+        "LAST_UPDATE_BY",
+        "FEATURE_ID",
+        "SURVEY_ID",
+        "SURVEY_ID_REF",
+        "REMARKS",
+        "LAYER",
+        "FEATURE_NAME",
+        "FEATURE_DESC",
+        "DATA_SOURCE",
+        "INTERPRETATION_SOURCE",
+        "SURVEY_DATE",
+        "HEIGHT",
+        "HEIGHT_DESCRIPTION",
+        "DEPTH",
+        "DIMENSION_DESCRIPTION",
+        "SYMBOLOGY_CODE",
+        "LENGTH",
+        "IMPRESSION_DEPTH",
+        "Shape_Length"
+      ],
+      "bounds": [
+        506012.95055834507,
+        5861811.025674397,
+        518091.8213652471,
+        5901319.272832309
+      ]
+    },
+    {
+      "name": "Mainland",
+      "geometry_type": "MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 13,
+      "fields": [
+        "FIPS_CNTRY",
+        "ISO_2DIGIT",
+        "ISO_3DIGIT",
+        "NAME",
+        "LONG_NAME",
+        "LOCSHRTNAM",
+        "LOCLNGNAM",
+        "CAPITAL",
+        "COUNTRYAFF",
+        "CONTINENT",
+        "LAND_TYPE",
+        "LAND_RANK",
+        "COLORMAP",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        277977.06460000016,
+        5593579.3014,
+        890661.2072000001,
+        6107553.221000001
+      ]
+    },
+    {
+      "name": "MobileSediments_SubcropFeatures",
+      "geometry_type": "3D MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 60,
+      "fields": [
+        "Feature",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        505015.574,
+        5861594.9131000005,
+        520284.6370000001,
+        5901351.602600001
+      ]
+    },
+    {
+      "name": "MobileSediments_Thickness_Contours_1m",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 2440,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505015.0,
+        5861655.604,
+        520293.3685999997,
+        5901320.0
+      ]
+    },
+    {
+      "name": "NW_Site_I_Investigation_Area",
+      "geometry_type": "MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "Name",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        504971.70430000033,
+        5861681.1721,
+        520477.73929999955,
+        5901232.4537
+      ]
+    },
+    {
+      "name": "NW_Site_I_Wind_Farm_Zone",
+      "geometry_type": "MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "OBJECTID",
+        "Km2",
+        "Versie",
+        "Opmerking",
+        "Gebiedsnr",
+        "Gebiedsnaa",
+        "SYMBOLOGIE",
+        "OPDRACHTGE",
+        "TXT_SYMBOL",
+        "Shape_Leng",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        504551.9299999997,
+        5861912.4154,
+        519911.66339999996,
+        5900728.7621
+      ]
+    },
+    {
+      "name": "NorthernTunnelValley_Escarpment",
+      "geometry_type": "3D MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        505513.0,
+        5885638.0,
+        516753.0,
+        5901318.0
+      ]
+    },
+    {
+      "name": "PCPT",
+      "geometry_type": "Point",
+      "crs": "EPSG:25831",
+      "feature_count": 60,
+      "fields": [
+        "Location_ID",
+        "Location_Type",
+        "Status",
+        "Final_Depth",
+        "Ground_Level",
+        "Easting",
+        "Northing",
+        "Latitude_Decimal",
+        "Longitude_Decimal",
+        "Latitude",
+        "Longitude",
+        "National_Grid_Referencing_System",
+        "Date_Start",
+        "Date_End",
+        "Remarks",
+        "Location_Purpose",
+        "Termination_Reason",
+        "Well_Cap",
+        "Grid_Letter_Reference",
+        "Local_X_Grid",
+        "Local_Y_Grid",
+        "Local_Level",
+        "Local_Datum",
+        "Local_Grid_System",
+        "Projection_Format",
+        "Locationing_Method",
+        "Sub_Location",
+        "Phase",
+        "Alignment_ID",
+        "Offset",
+        "Chainage",
+        "Transformation",
+        "Checked_by",
+        "Checked_Date",
+        "Approved_by",
+        "National_Datum_Referencing_System",
+        "Original_Location_ID",
+        "Original_Job_ID",
+        "Original_Company",
+        "Original_Id",
+        "Northing_Traverse_End",
+        "Longitude_End",
+        "Local_Y_End",
+        "Local_X_End",
+        "Local_Level_End",
+        "Latitude_End",
+        "Ground_Level_End",
+        "Easting_Traverse_End"
+      ],
+      "bounds": [
+        506728.76999999955,
+        5864742.26,
+        519532.96999999974,
+        5898760.35
+      ]
+    },
+    {
+      "name": "Pipelines_Umbilicals",
+      "geometry_type": "3D MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 336,
+      "fields": [
+        "CODE",
+        "NAME_FULL",
+        "DIA_OUT_INCH",
+        "DATE_INSTALLED",
+        "MATERIAL",
+        "COATING",
+        "NOTES",
+        "STATUS",
+        "UPDATE_DATE",
+        "DATE_ADDED",
+        "OPERATOR",
+        "FROM_",
+        "ADDED_BY",
+        "CLIENT_CODE",
+        "TO",
+        "BUNDLE_WITH",
+        "WALL_THICKNESS_mm",
+        "CORROSION_PROTECTION",
+        "PRODUCT_CARRIED",
+        "NEXT_FULL_SURVEY",
+        "LAST_FULL_SURVEY",
+        "STATUS_DATE",
+        "LAYER",
+        "Route_Changes_2015",
+        "TYPE",
+        "NAME",
+        "DATA_SOURCE",
+        "Shape_Length"
+      ],
+      "bounds": [
+        396866.4194,
+        5655157.8419,
+        821839.3234000001,
+        6449976.210100001
+      ]
+    },
+    {
+      "name": "Potential_mobile_sediments",
+      "geometry_type": "3D MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 8,
+      "fields": [
+        "REMARKS",
+        "FEATURE_NA",
+        "FEATURE_DE",
+        "SHAPE_Leng",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        505129.6394999996,
+        5861765.4881,
+        520170.92090000026,
+        5901229.026000001
+      ]
+    },
+    {
+      "name": "R00_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1728,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505499.3496000003,
+        5861571.1116,
+        520074.83330000006,
+        5901330.0
+      ]
+    },
+    {
+      "name": "R02_2_Contour_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 2115,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505390.0,
+        5861806.625399999,
+        520290.0,
+        5901330.0
+      ]
+    },
+    {
+      "name": "R02_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 447,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505220.0,
+        5861933.3696,
+        519793.49480000045,
+        5901330.0
+      ]
+    },
+    {
+      "name": "R05_Contour_2m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 5632,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505233.0968000004,
+        5861627.422700001,
+        520249.5438000001,
+        5901283.0448
+      ]
+    },
+    {
+      "name": "R05_contour_interval_5m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1229,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        506414.0689000003,
+        5866516.4866,
+        519916.66530000046,
+        5899692.947699999
+      ]
+    },
+    {
+      "name": "R10_Contour_2m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 3071,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505820.84020000044,
+        5861647.401000001,
+        520172.58579999954,
+        5901093.3802000005
+      ]
+    },
+    {
+      "name": "R10_contour_interval_1m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 7047,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505035.14749999996,
+        5861702.8747000005,
+        520228.84250000026,
+        5901330.0
+      ]
+    },
+    {
+      "name": "R20_1_Contour_2m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1496,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505035.0,
+        5861636.934,
+        520265.0,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R20_1_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1093,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505314.7280000001,
+        5861839.9372000005,
+        520145.0,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R20_2_Contour_2m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1487,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505035.0,
+        5861636.934,
+        520265.0,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R20_2_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1079,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505275.0,
+        5861901.8445,
+        519935.0,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R20_3_Contour_2m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1567,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505035.0,
+        5861636.9388,
+        520275.0,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R20_3_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1251,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505275.0,
+        5861901.8774,
+        519952.17650000006,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R20_4_Contour_2m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1706,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505035.0,
+        5861580.4988,
+        520275.0,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R20_4_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1311,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505275.0,
+        5861586.4065000005,
+        519961.9968999997,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R20_5_Contour__5m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1192,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505375.0,
+        5861821.996300001,
+        519062.1478000004,
+        5899492.9912
+      ]
+    },
+    {
+      "name": "R20_5_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 2822,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505311.4008999998,
+        5861682.7841,
+        519971.12870000023,
+        5901330.0
+      ]
+    },
+    {
+      "name": "R25_N_1_Contour_5m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1388,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505162.0460999999,
+        5861821.996300001,
+        519062.1478000004,
+        5901320.0
+      ]
+    },
+    {
+      "name": "R25_N_1_contour_interval_5m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1228,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505103.17059999984,
+        5861903.2421,
+        520255.0,
+        5901330.0
+      ]
+    },
+    {
+      "name": "R25_N_2_Contour_5m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1252,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505050.0,
+        5861819.4003,
+        519061.8019000003,
+        5901330.0
+      ]
+    },
+    {
+      "name": "R25_N_2_contour_interval_5m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 12739,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505087.53390000015,
+        5861910.351600001,
+        520245.4902999997,
+        5901330.202199999
+      ]
+    },
+    {
+      "name": "R25_N_3_Contour_10m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 634,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505040.0,
+        5861821.640799999,
+        519061.8470999999,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R25_N_3_contour_interval_10m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 543,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505070.0,
+        5861904.2621,
+        517536.5712000001,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R25_N_3_contour_interval_5m",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 475,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505023.00000000093,
+        5888340.000000004,
+        516073.34867051616,
+        5901336.000000002
+      ]
+    },
+    {
+      "name": "R25_N_4_Contour_10m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 755,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505398.18039999995,
+        5861819.0513,
+        519062.1684999997,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R25_N_4_contour_interval_10m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 613,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505395.0,
+        5861903.761299999,
+        517585.0275999997,
+        5901325.0
+      ]
+    },
+    {
+      "name": "R25_S_5_contour_interval_10m",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 428,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        508015.00000000093,
+        5861898.255630977,
+        517592.86748627573,
+        5890417.251846334
+      ]
+    },
+    {
+      "name": "R25_S_5_contour_interval_20m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 130,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        508050.0,
+        5866986.2697,
+        514743.00519999955,
+        5888874.391100001
+      ]
+    },
+    {
+      "name": "R25_S_Contour_10m_MBSF",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 419,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        508030.0,
+        5861820.5265999995,
+        519057.15550000034,
+        5892531.0781
+      ]
+    },
+    {
+      "name": "SCPT",
+      "geometry_type": "Point",
+      "crs": "EPSG:25831",
+      "feature_count": 27,
+      "fields": [
+        "Borehole_Sample__TestPoint",
+        "Penetration_DepthBSF_m_",
+        "Recovery_DepthBSF_m_",
+        "F4",
+        "Easting__m_",
+        "Northing__m_",
+        "F7",
+        "Latitude",
+        "F9",
+        "Longitude",
+        "Date",
+        "F12",
+        "BathymetryChart_Reduced_m_",
+        "F14",
+        "F15",
+        "Pressuresensor_Reduced_m_",
+        "F17",
+        "USBL_Reduced_m_",
+        "F19"
+      ],
+      "bounds": [
+        507393.9999652505,
+        5869844.999956258,
+        519308.9999833517,
+        5897284.999968745
+      ]
+    },
+    {
+      "name": "Seismic_anomaly_1",
+      "geometry_type": "MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 624,
+      "fields": [
+        "InPoly_FID",
+        "ORIG_FID",
+        "Shape_Leng",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        505153.1864,
+        5880450.9705,
+        520133.2756000003,
+        5901204.737400001
+      ]
+    },
+    {
+      "name": "SouthernTunnelValley_Escarpment",
+      "geometry_type": "3D MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        508038.0,
+        5866753.0,
+        514818.0,
+        5889053.0
+      ]
+    },
+    {
+      "name": "Structures",
+      "geometry_type": "3D MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 291,
+      "fields": [
+        "_gdb_PROD_BOR",
+        "_gdb_AFGESNED",
+        "_gdb_OPMERKING",
+        "UPDATE_DATE",
+        "DATE_ADDED",
+        "Product_NLOG",
+        "Last_Modified_By",
+        "Last_Modified_On",
+        "STATUS",
+        "Notes",
+        "LAYER",
+        "STATUS_DATE",
+        "OPERATOR",
+        "INSTALLATION_DATE",
+        "TYPE",
+        "NAME",
+        "DATA_SOURCE",
+        "SHAPE_1_Length"
+      ],
+      "bounds": [
+        475137.2812999999,
+        5768499.184,
+        717691.4877000004,
+        6245262.6127
+      ]
+    },
+    {
+      "name": "Survey_Shotpoints_2DUHR",
+      "geometry_type": "3D MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 266,
+      "fields": [
+        "OBJECTID",
+        "LAST_UPDAT",
+        "LAST_UPD00",
+        "FEATURE_ID",
+        "SURVEY_ID",
+        "SURVEY_ID_",
+        "REMARKS",
+        "SURVEY_NAM",
+        "LINE_ID",
+        "LINE_NAME",
+        "STATION_DE",
+        "STATION_TY",
+        "Shot_Point",
+        "Shape_Length"
+      ],
+      "bounds": [
+        504977.4500000002,
+        5861606.0,
+        520302.0999999996,
+        5901394.25
+      ]
+    },
+    {
+      "name": "Survey_Shotpoints_MAG",
+      "geometry_type": "3D MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "MAG_ID",
+        "Shape_Length"
+      ],
+      "bounds": [
+        504905.73000000045,
+        5861523.449999999,
+        520434.04000000004,
+        5901498.470000001
+      ]
+    },
+    {
+      "name": "Survey_Shotpoints_SBP",
+      "geometry_type": "3D MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "SBP_ID",
+        "Shape_Length"
+      ],
+      "bounds": [
+        504869.4400000004,
+        5861497.27,
+        520320.01999999955,
+        5901475.699999999
+      ]
+    },
+    {
+      "name": "Survey_Shotpoints_SSS",
+      "geometry_type": "3D MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1,
+      "fields": [
+        "SSS_ID",
+        "Shape_Length"
+      ],
+      "bounds": [
+        504677.7999999998,
+        5861429.529999999,
+        520331.33999999985,
+        5901502.369999999
+      ]
+    },
+    {
+      "name": "TCPT",
+      "geometry_type": "Point",
+      "crs": "EPSG:25831",
+      "feature_count": 27,
+      "fields": [
+        "Borehole_Sample__TestPoint",
+        "Penetration_DepthBSF_m_",
+        "Recovery_DepthBSF_m_",
+        "F4",
+        "Easting__m_",
+        "Northing__m_",
+        "F7",
+        "Latitude",
+        "F9",
+        "Longitude",
+        "Date",
+        "F12",
+        "BathymetryChart_Reduced_m_",
+        "F14",
+        "F15",
+        "Pressuresensor_Reduced_m_",
+        "F17",
+        "USBL_Reduced_m_",
+        "F19"
+      ],
+      "bounds": [
+        506949.00001941994,
+        5867390.999970943,
+        519406.00001806393,
+        5899586.999968737
+      ]
+    },
+    {
+      "name": "UNIT_D_1_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 6305,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505605.0,
+        5861683.886,
+        519821.12409999967,
+        5901234.878699999
+      ]
+    },
+    {
+      "name": "UNIT_D_2_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 9928,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505005.0,
+        5861635.0,
+        520235.0,
+        5901325.0
+      ]
+    },
+    {
+      "name": "UNIT_D_3_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 321,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        512302.1144000003,
+        5866892.2146000005,
+        520225.0,
+        5888753.8201
+      ]
+    },
+    {
+      "name": "UNIT_D_5_contour_interval_5m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 85,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        508095.0,
+        5862087.755100001,
+        514145.75490000006,
+        5892553.9299
+      ]
+    },
+    {
+      "name": "UNIT_E_1_contour_interval_5m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 144,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505189.9929999998,
+        5888176.1127,
+        516224.0719999997,
+        5901320.0
+      ]
+    },
+    {
+      "name": "UNIT_E_2_contour_interval_5m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 71404,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505010.0,
+        5861580.0,
+        520237.7778000003,
+        5901330.0
+      ]
+    },
+    {
+      "name": "UNIT_E_3_contour_interval_10m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 373,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505010.0,
+        5887921.4266,
+        516674.4112,
+        5901325.0
+      ]
+    },
+    {
+      "name": "UNIT_E_4_contour_interval_10m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 325,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505055.0,
+        5885755.9,
+        516482.1414000001,
+        5901325.0
+      ]
+    },
+    {
+      "name": "UNIT_E_5_contour_interval_20m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 82,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        508060.0,
+        5867118.248,
+        514731.0091000004,
+        5888862.3651
+      ]
+    },
+    {
+      "name": "Unit_A_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 2114,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505390.0,
+        5861806.6252,
+        520290.0,
+        5901330.0
+      ]
+    },
+    {
+      "name": "Unit_B_contour_interval_5m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 1417,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        507674.01400000043,
+        5864133.4747,
+        519363.12770000007,
+        5899688.525599999
+      ]
+    },
+    {
+      "name": "Unit_C_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 4998,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505174.7715999996,
+        5861695.7622,
+        520194.7412999999,
+        5901330.0
+      ]
+    },
+    {
+      "name": "Unit_D_4_contour_interval_2m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 10,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        509116.90160000045,
+        5865718.2334,
+        514913.6788999997,
+        5887017.6472
+      ]
+    },
+    {
+      "name": "Unit_F_contour_interval_10m_LAT",
+      "geometry_type": "MultiLineString",
+      "crs": "EPSG:25831",
+      "feature_count": 10067,
+      "fields": [
+        "Id",
+        "Contour",
+        "Shape_Length"
+      ],
+      "bounds": [
+        505470.0,
+        5861570.0,
+        520310.0,
+        5901330.0
+      ]
+    },
+    {
+      "name": "VibroCore",
+      "geometry_type": "Point",
+      "crs": "EPSG:25831",
+      "feature_count": 60,
+      "fields": [
+        "Borehole_Sample__TestPoint",
+        "Penetration_DepthBSF_m_",
+        "Recovery_DepthBSF_m_",
+        "F4",
+        "Easting__m_",
+        "Northing__m_",
+        "F7",
+        "Latitude",
+        "F9",
+        "Longitude",
+        "Date",
+        "F12",
+        "BathymetryChart_Reduced_m_",
+        "F14",
+        "F15",
+        "CTDProbe_Reduced_m_",
+        "F17",
+        "USBL_Reduced_m_",
+        "F19"
+      ],
+      "bounds": [
+        506953.00003219396,
+        5864339.000026293,
+        519407.99997444823,
+        5899586.000040546
+      ]
+    },
+    {
+      "name": "Wind_Farm_Zones",
+      "geometry_type": "MultiPolygon",
+      "crs": "EPSG:25831",
+      "feature_count": 12,
+      "fields": [
+        "OBJECTID",
+        "Km2",
+        "Versie",
+        "Opmerking",
+        "Gebiedsnr",
+        "Gebiedsnaa",
+        "SYMBOLOGIE",
+        "OPDRACHTGE",
+        "TXT_SYMBOL",
+        "Shape_Leng",
+        "Shape_Length",
+        "Shape_Area"
+      ],
+      "bounds": [
+        501892.90440000035,
+        5814654.0164,
+        698353.1936999997,
+        6030204.0
+      ]
+    }
+  ],
+  "raster_layers": []
+}
