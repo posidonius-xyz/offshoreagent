@@ -103,3 +103,21 @@ services:
     entrypoint: ["python"]
     profiles:
       - tools
+
+  # ==========================================================================
+  # JupyterLab Service (GIS Notebooks)
+  # Usage: docker compose up jupyter
+  # Access: http://localhost:8888
+  # ==========================================================================
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile.jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./data-extracted:/app/data-extracted:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped

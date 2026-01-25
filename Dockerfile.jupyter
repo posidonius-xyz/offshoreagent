@@ -1,0 +1,34 @@
+FROM python:3.11-slim
+
+# Install system dependencies for GDAL/Fiona/GeoPandas
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gdal-bin \
+    libgdal-dev \
+    libgeos-dev \
+    libproj-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set GDAL environment variables
+ENV GDAL_CONFIG=/usr/bin/gdal-config
+
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+
+# Install Python dependencies + Jupyter
+RUN pip install --no-cache-dir -r requirements.txt jupyterlab matplotlib
+
+# Copy notebooks
+COPY notebooks/ ./notebooks/
+
+# Create non-root user for security
+RUN useradd --create-home appuser && chown -R appuser:appuser /app
+USER appuser
+
+# Expose Jupyter port
+EXPOSE 8888
+
+# Run JupyterLab
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--NotebookApp.token=''", "--NotebookApp.password=''"]

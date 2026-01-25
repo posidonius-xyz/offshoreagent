@@ -34,6 +34,9 @@ This project includes an example implementation for Dutch offshore wind farm inf
 docker compose up nwi-dashboard    # Nederwiek I at http://localhost:8000
 docker compose up tnw-dashboard    # TNW at http://localhost:8001
 
+# Run JupyterLab for interactive GIS notebooks
+docker compose up jupyter          # JupyterLab at http://localhost:8888
+
 # List available datasets (JSON output for parsing)
 docker compose run --rm data-download --json list
 
@@ -77,6 +80,7 @@ python gdb_inventory.py
 |---------|---------|------|-------|
 | `nwi-dashboard` | Nederwiek I dashboard | 8000 | `docker compose up nwi-dashboard` |
 | `tnw-dashboard` | TNW dashboard | 8001 | `docker compose up tnw-dashboard` |
+| `jupyter` | JupyterLab for GIS notebooks | 8888 | `docker compose up jupyter` |
 | `data-download` | Download datasets from API | - | `docker compose run --rm data-download <command>` |
 | `gdb-inventory` | Analyze geodatabase layers | - | `docker compose run --rm gdb-inventory` |
 | `python-runner` | Run arbitrary scripts | - | `docker compose run --rm python-runner script.py` |
@@ -127,6 +131,10 @@ project/
 │   ├── map_builder.py
 │   ├── routes.py
 │   └── templates/dashboard.html
+├── notebooks/                   # Jupyter notebooks for GIS exploration
+│   ├── 01_explore_geodatabase.ipynb   # Inventory and explore GDB layers
+│   ├── 02_visualize_layers.ipynb      # Interactive map visualization
+│   └── 03_spatial_analysis.ipynb      # Spatial queries and analysis
 ├── data_download.py             # CLI for downloading datasets from API
 ├── gdb_inventory.py             # Inventories geodatabase layers
 ├── infrastructure_dashboard.py  # NWI dashboard entry point
@@ -134,6 +142,7 @@ project/
 ├── docker-compose.yml           # Container orchestration
 ├── Dockerfile                   # NWI service image (with GIS libs)
 ├── Dockerfile.tnw               # TNW service image
+├── Dockerfile.jupyter           # JupyterLab service image
 ├── Dockerfile.download          # Download service image (with azcopy)
 ├── data-extracted/              # Extracted geodatabase files
 └── data/                        # Downloaded raw archives (git-ignored)
