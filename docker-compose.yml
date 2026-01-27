@@ -46,6 +46,29 @@ services:
       start_period: 40s
 
   # ==========================================================================
+  # NWI Arup Geological Ground Model Dashboard
+  # Usage: docker compose up nwi-arup-dashboard
+  # Access: http://localhost:8002
+  # ==========================================================================
+  nwi-arup-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.nwi_arup
+    ports:
+      - "8003:8000"
+    volumes:
+      - ./data-extracted:/app/data-extracted:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ==========================================================================
   # Data Download Service (CLI tool)
   # Usage:
   #   docker compose run --rm data-download list
@@ -103,3 +126,21 @@ services:
     entrypoint: ["python"]
     profiles:
       - tools
+
+  # ==========================================================================
+  # JupyterLab Service (GIS Notebooks)
+  # Usage: docker compose up jupyter
+  # Access: http://localhost:8888
+  # ==========================================================================
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile.jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./data-extracted:/app/data-extracted:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
