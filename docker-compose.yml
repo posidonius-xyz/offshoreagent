@@ -69,6 +69,25 @@ services:
       start_period: 40s
 
   # ==========================================================================
+  # Nginx Reverse Proxy
+  # Usage: docker compose up nginx
+  # Access: http://localhost:8080 | https://localhost:8443
+  # Slugs: /nwi/ /tnw/ /nwi-arup/
+  # ==========================================================================
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "8080:80"
+      - "8443:443"
+    depends_on:
+      - nwi-dashboard
+      - tnw-dashboard
+      - nwi-arup-dashboard
+    restart: unless-stopped
+
+  # ==========================================================================
   # Data Download Service (CLI tool)
   # Usage:
   #   docker compose run --rm data-download list

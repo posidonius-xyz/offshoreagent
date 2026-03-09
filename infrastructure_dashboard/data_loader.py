@@ -10,6 +10,9 @@ from .config import GDB_PATH, LAYER_CONFIGS
 
 warnings.filterwarnings('ignore')
 
+# Per-layer cache
+_layer_cache = {}
+
 
 def safe_load(gdb_path: str, layer_name: str):
     """
@@ -42,6 +45,32 @@ def safe_load(gdb_path: str, layer_name: str):
         return None
 
 
+def load_single_layer(key, gdb_path=None):
+    """
+    Load a single layer by key with caching.
+
+    Args:
+        key: Layer key from LAYER_CONFIGS
+        gdb_path: Path to geodatabase (defaults to config GDB_PATH)
+
+    Returns:
+        GeoDataFrame or None
+    """
+    if key in _layer_cache:
+        return _layer_cache[key]
+
+    if key not in LAYER_CONFIGS:
+        return None
+
+    if gdb_path is None:
+        gdb_path = GDB_PATH
+
+    config = LAYER_CONFIGS[key]
+    gdf = safe_load(gdb_path, config['gdb_layer'])
+    _layer_cache[key] = gdf
+    return gdf
+
+
 def load_all_layers(gdb_path: str = None):
     """
     Load all configured layers from the geodatabase.
@@ -59,7 +88,7 @@ def load_all_layers(gdb_path: str = None):
 
     layers = {}
     for key, config in LAYER_CONFIGS.items():
-        layers[key] = safe_load(gdb_path, config['gdb_layer'])
+        layers[key] = load_single_layer(key, gdb_path)
 
     return layers
 

@@ -13,11 +13,6 @@ def create_app():
     from .routes import register_routes
     register_routes(application)
 
-    # Preload GIS data at startup
-    from .map_builder import get_layers
-    with application.app_context():
-        get_layers()
-
     return application
 
 

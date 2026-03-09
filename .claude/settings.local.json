@@ -8,7 +8,12 @@
       "Bash(findstr:*)",
       "Bash(docker compose run:*)",
       "Bash(docker compose build:*)",
-      "Bash(docker compose:*)"
+      "Bash(docker compose:*)",
+      "Bash(git pull)",
+      "Bash(docker ps -a --format '{{.ID}} {{.Names}} {{.Ports}}')",
+      "Bash(docker stop offshoreagent-nwi-arup-dashboard-1)",
+      "Bash(docker rm offshoreagent-nwi-arup-dashboard-1)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f''NWI: {len\\(d\\)} layers''\\); [print\\(f''  {l[\"\"key\"\"]}: {l[\"\"name\"\"]}''\\) for l in d[:3]]\")"
     ]
   }
 }
