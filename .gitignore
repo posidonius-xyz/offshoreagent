@@ -67,6 +67,5 @@ instance/
 .ipynb_checkpoints/
 
 # Output files
-*.html
 !static/*.html
 !templates/*.html

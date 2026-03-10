@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nederwiek I Infrastructure Dashboard</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        .header {
+            background: linear-gradient(135deg, #1a5276, #2980b9);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 { margin: 0; font-size: 24px; }
+        .header .subtitle { font-size: 14px; opacity: 0.8; }
+        .stats {
+            display: flex;
+            gap: 20px;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .stat-box .number { font-size: 20px; font-weight: bold; }
+        .stat-box .label { font-size: 11px; opacity: 0.8; }
+        .map-container {
+            height: calc(100vh - 70px);
+            position: relative;
+            overflow: hidden;
+        }
+        .map-container iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: none;
+        }
+        .legend {
+            position: fixed;
+            bottom: 30px;
+            left: 10px;
+            z-index: 9999;
+            background-color: rgba(255,255,255,0.95);
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 11px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            line-height: 1.8;
+        }
+        .legend-line { display: inline-block; width: 16px; height: 3px; vertical-align: middle; margin-right: 4px; }
+        .legend-circle { display: inline-block; width: 10px; height: 10px; border-radius: 50%; vertical-align: middle; margin-right: 4px; }
+        html, body { height: 100%; overflow: hidden; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>Nederwiek I Infrastructure Dashboard</h1>
+            <div class="subtitle">Geological Ground Model (GGM) - Interactive Map</div>
+        </div>
+        <div class="stats">
+            <div class="stat-box">
+                <div class="number">{{ stats.cables }}</div>
+                <div class="label">Cables</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">{{ stats.pipelines }}</div>
+                <div class="label">Pipelines</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">{{ stats.boreholes }}</div>
+                <div class="label">Boreholes</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">{{ stats.total_layers }}</div>
+                <div class="label">Layers</div>
+            </div>
+        </div>
+    </div>
+    <div class="map-container">
+        {{ map_html | safe }}
+        <div class="legend">
+            <b>Legend</b><br>
+            <span class="legend-line" style="background: green; opacity: 0.5; border: 1px dashed darkgreen;"></span> Wind Farm<br>
+            <span class="legend-line" style="background: red;"></span> Pipelines<br>
+            <span class="legend-line" style="background: orange;"></span> Telecom<br>
+            <span class="legend-line" style="background: yellow; border: 1px solid #999;"></span> Power<br>
+            <span class="legend-circle" style="background: blue;"></span> Boreholes<br>
+            <span class="legend-circle" style="background: purple;"></span> PCPT<br>
+            <span class="legend-circle" style="background: lightgreen; border: 1px solid green;"></span> VibroCore
+        </div>
+    </div>
+</body>
+</html>
